@@ -32,7 +32,7 @@ Notification API, web tarayıcılarında bildirimler oluşturmayı sağlayan bir
 ## Örnek Proje Açıklaması
 
 Bu projede, kullanıcıdan alınan bilgilerle özelleştirilebilir bildirimler oluşturan bir form bulunmaktadır. Kullanıcı, başlık, içerik, yönlendirme URL'si ve görselleri (ikon ve resim) girerek bir bildirim oluşturabilir.
-Örnek projeye, [Notification API Example](https://notification-api-js.netlify.app/){:target="_blank"} üzerinden ulaşabilirsiniz.
+Örnek projeye, [Notification API Example](https://notification-api-js.netlify.app/) üzerinden ulaşabilirsiniz.
 
 ### Temel Fonksiyonlar
 
