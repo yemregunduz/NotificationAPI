@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotificationAPI</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" id="notificationForm">
+                <div class="form-title">Notification Form</div>
+
+            <div class="form-item">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter notification title">
+            </div>
+            <div class="form-item">
+                <label for="body">Body</label>
+                <textarea id="body" name="body" placeholder="Enter notification body"></textarea>
+            </div>
+            <div class="form-item">
+                <label for="redirectUrl">Redirect URL</label>
+                <input type="text" id="redirectUrl" name="redirectUrl" placeholder="Enter notification redirect url">
+            </div>
+            <div class="form-item">
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="form-item">
+                <label for="icon">Icon</label>
+                <input type="file" id="icon" name="icon" accept="image/*">
+            </div>
+
+            <div class="form-item">
+                <div class="form-helper-text">If you do not fill out the form, a notification will be generated with
+                    default values.
+                </div>
+            </div>
+            <button class="button reset-button" type="reset">Reset</button>
+            <button class="button submit-button" type="button">Create Notification</button>
+        </form>
+
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
