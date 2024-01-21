@@ -1,12 +1,35 @@
 # Notification API Kullanımı
 
-Bu proje, tarayıcıda **Notification API**'yi kullanarak bildirimler oluşturan basit bir web uygulamasını içerir. Aşağıda, projenin kullanımı ve kodunun nasıl çalıştığı ile ilgili bir markdown dosyası bulunmaktadır.
+Bu proje, tarayıcıda **Notification API**'yi kullanarak bildirimler oluşturan basit bir web uygulamasını içerir.
 
 ## Notification API Nedir?
 
 Notification API, web tarayıcılarında bildirimler oluşturmayı sağlayan bir JavaScript API'sidir. Bu API, kullanıcılara tarayıcı içinde etkileşimli ve bilgilendirici bildirimler gönderme imkanı sağlar.
 
-## Proje Açıklaması
+## Notification API Kullanımı:
+
+1. **İzin Kontrolü:**
+   - `Notification.permission` özelliğini kullanarak tarayıcı bildirim izni kontrol edilir.
+   - İzin alınmamışsa kullanıcıya izin isteği gönderilir.
+   - İzin verildiyse `Notification.requestPermission()` fonksiyonunun then bloğu çalışır.
+
+2. **Bildirim Oluşturma:**
+   - `new Notification(title, options)` kullanılarak bildirim oluşturulur.
+   - `title`: Bildirim başlığı.
+   - `options`: Bildirim seçenekleri (ikon, resim, yönlendirme URL'si vb.).
+
+3. **Bildirim Seçenekleri:**
+   - Bildirim oluştururken aşağıdaki seçenekler kullanılabilir:
+     - `title`: Bildirim başlığı.
+     - `body`: Bildirim içeriği.
+     - `icon`: Bildirim ikonu (URL veya yol).
+     - `image`: Bildirimde görünecek büyük resim (URL veya yol).
+     - `badge`: Bildirim ikonu üzerinde görünecek küçük bir simge (URL veya yol).
+     - `data`: Bildirimle ilişkilendirilecek ek veri.
+     - `requireInteraction`: Bildirim, kullanıcı tarafından kapatılana kadar açık kalır.
+     - `actions`: Bildirim üzerinde görünecek etkileşimli düğmeler.
+
+## Örnek Proje Açıklaması
 
 Bu projede, kullanıcıdan alınan bilgilerle özelleştirilebilir bildirimler oluşturan bir form bulunmaktadır. Kullanıcı, başlık, içerik, yönlendirme URL'si ve görselleri (ikon ve resim) girerek bir bildirim oluşturabilir.
 
