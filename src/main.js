@@ -1,30 +1,16 @@
 import defaultNotification from './models/defaultNotification.js';
 
-const getNotificationPermission = () => {
-  return new Promise((resolve) => {
-    if ('Notification' in window) {
-      if (Notification.permission !== 'granted') {
-        Notification.requestPermission().then((permission) => {
-          resolve(permission);
-        });
-      } else {
-        resolve('granted');
-      }
-    } else {
-      resolve(null);
-    }
-  });
+const getNotificationPermission = async () => {
+  if (!window.Notification) return null;
+  const permission = await Notification.requestPermission();
+  return permission;
 };
 
-const createNotification = (title, options) => {
-  return new Promise(async (resolve) => {
-    const permission = await getNotificationPermission();
+const createNotification = async (title, options) => {
+  const permission = await getNotificationPermission();
+  if (permission != 'granted') return null;
 
-    if (permission === 'granted') {
-      const notification = new Notification(title, options);
-      resolve(notification);
-    }
-  });
+  return new Notification(title, options);
 };
 
 const handleNotificationFormSubmit = () => {
@@ -46,6 +32,7 @@ const handleNotificationFormSubmit = () => {
   };
 
   createNotification(title, options).then((notification) => {
+    if (!notification) return;
     notification.addEventListener('click', () => {
       window.open(redirectUrl);
     });
