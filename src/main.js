@@ -32,11 +32,29 @@ const handleNotificationFormSubmit = () => {
   };
 
   createNotification(title, options).then((notification) => {
-    if (!notification) return;
+    if (!notification) {
+      showNotificationPermissionHelper();
+      return;
+    }
     notification.addEventListener('click', () => {
       window.open(redirectUrl);
     });
   });
+};
+
+const showNotificationPermissionHelper = () => {
+  console.log(window.innerWidth);
+  const notificationPermissionHelper = document.querySelector(
+    '.permission-location-helper'
+  );
+
+  notificationPermissionHelper.classList.add('show');
+  setTimeout(
+    () => {
+      notificationPermissionHelper.classList.remove('show');
+    },
+    window.innerWidth < 768 ? 1000 : 2500
+  );
 };
 
 const formatUrl = (url) => {
